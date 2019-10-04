@@ -85,7 +85,7 @@ function ExecuteQueryWithIncrementalRetry {
 }
 
 Connect-SPOService -Url $adminurl -Credential $cred
-$siteurls = Get-SPOSite | select Url
+$siteurls = Get-SPOSite -Limit ALL | select Url
 
 foreach ($siteurl in $siteurls)
 {
